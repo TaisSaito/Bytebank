@@ -59,15 +59,23 @@ namespace MyByteBank
                         TotalDoBanco(conta);
                         break;
                     case 6:
+                        string opcaoSubMenu1;
                         int opcaoSubmenu;
                         do
                         {
                             SubMenu();
+                            opcaoSubMenu1 = Console.ReadLine();
+                            while (!String.Equals(opcaoSubMenu1, "0") && !String.Equals(opcaoSubMenu1, "1") && !String.Equals(opcaoSubMenu1, "2") && !String.Equals(opcaoMenu1, "3") || String.Equals(opcaoSubMenu1, null))
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Opção inválida, tente novamente");
+                                Console.WriteLine();
+                                SubMenu();
+                                opcaoSubMenu1 = Console.ReadLine();
+                            }
+                            opcaoSubmenu = int.Parse(opcaoSubMenu1);
 
-
-                            opcaoSubmenu = int.Parse(Console.ReadLine());
-
-
+                            
                             Console.WriteLine("-----------------");
 
                             switch (opcaoSubmenu)
