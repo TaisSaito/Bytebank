@@ -1,0 +1,15 @@
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.csproj.AssemblyReference.cache
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.AssemblyInfoInputs.cache
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.AssemblyInfo.cs
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.csproj.CoreCompileInputs.cache
+C:\Saito\Csharp\MyByteBank\MyByteBank\bin\Debug\net6.0\MyByteBank.exe
+C:\Saito\Csharp\MyByteBank\MyByteBank\bin\Debug\net6.0\MyByteBank.deps.json
+C:\Saito\Csharp\MyByteBank\MyByteBank\bin\Debug\net6.0\MyByteBank.runtimeconfig.json
+C:\Saito\Csharp\MyByteBank\MyByteBank\bin\Debug\net6.0\MyByteBank.dll
+C:\Saito\Csharp\MyByteBank\MyByteBank\bin\Debug\net6.0\MyByteBank.pdb
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.dll
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\refint\MyByteBank.dll
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.pdb
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\MyByteBank.genruntimeconfig.cache
+C:\Saito\Csharp\MyByteBank\MyByteBank\obj\Debug\net6.0\ref\MyByteBank.dll
