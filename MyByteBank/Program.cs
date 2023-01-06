@@ -10,6 +10,7 @@ namespace MyByteBank
 
         static void Main(string[] args)
         {
+            string opcaoMenu1;
             int opcaoMenu;
 
 
@@ -17,7 +18,16 @@ namespace MyByteBank
             do
             {
                 ShowMenu();
-                opcaoMenu = int.Parse(Console.ReadLine());
+                opcaoMenu1 = Console.ReadLine();
+                while (!String.Equals(opcaoMenu1, "0") && !String.Equals(opcaoMenu1, "1") && !String.Equals(opcaoMenu1, "2") && !String.Equals(opcaoMenu1, "3") && !String.Equals(opcaoMenu1, "4") && !String.Equals(opcaoMenu1, "5") && !String.Equals(opcaoMenu1, "6") ||  String.Equals(opcaoMenu1, null))
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Opção inválida, tente novamente");
+                    Console.WriteLine();
+                    ShowMenu();
+                    opcaoMenu1 = Console.ReadLine();
+                }
+                opcaoMenu = int.Parse(opcaoMenu1);
 
                 Console.WriteLine("-----------------");
 
@@ -27,55 +37,63 @@ namespace MyByteBank
                         Console.WriteLine("Encerrando o programa...");
                         break;
                     case 1:
-                        Console.WriteLine("Opção [1] - Inserir nova conta");
+                        Console.WriteLine("Você digitou opção [1] - Inserir nova conta");
                         AdicionarConta(conta);
                         break;
                     case 2:
-                        Console.WriteLine("Opção [2] - Deletar uma conta");
+                        Console.WriteLine("Você digitou opção [2] - Deletar uma conta");
                         DeletarConta(conta);
                         break;
                     case 3:
-                        Console.WriteLine("Opção [3] - Listar todas as contas registradas");
+                        Console.WriteLine("Você digitou opção [3] - Listar todas as contas registradas");
+                        Console.WriteLine();
                         ContasRegistradas(conta);
                         break;
                     case 4:
-                        Console.WriteLine("[4] - Detalhes de uma conta");
+                        Console.WriteLine("Você digitou opção [4] - Detalhes de uma conta");
                         ApresentarConta(conta);
                         break;
 
                     case 5:
-                        Console.WriteLine("Opção [5] - Total armazenado no banco: ");
+                        Console.WriteLine("Você digitou opção [5] - Total armazenado no banco: ");
                         TotalDoBanco(conta);
                         break;
                     case 6:
-                        SubMenu();
-
-
-                        int opcaoSubmenu = int.Parse(Console.ReadLine());
-
-
-                        Console.WriteLine("-----------------");
-
-                        switch (opcaoSubmenu)
+                        int opcaoSubmenu;
+                        do
                         {
-                            case 0:
-                                Console.WriteLine("Sair do Submenu");
-                                break;
-                            case 1:
-                                Console.WriteLine("Opção [1] - Deposito");
-                                Depositar(conta);
-                                break;
-                            case 2:
-                                Console.WriteLine("Opção [2] - Transferência");
-                                Transferir(conta);
-                                break;
-                            case 3:
-                                Console.WriteLine("Opção [3] - Saque");
-                                Sacar(conta);
-                                break;
-                            
+                            SubMenu();
+
+
+                            opcaoSubmenu = int.Parse(Console.ReadLine());
+
+
+                            Console.WriteLine("-----------------");
+
+                            switch (opcaoSubmenu)
+                            {
+                                case 0:
+                                    Console.WriteLine("Sair");
+                                    break;
+                                case 1:
+                                    Console.WriteLine("Você digitou opção [1] - Deposito");
+                                    Depositar(conta);
+
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Você digitou opção [2] - Transferência");
+                                    Transferir(conta);
+
+                                    break;
+                                case 3:
+                                    Console.WriteLine("Você digitou opção [3] - Saque");
+                                    Sacar(conta);
+
+                                    break;
+
+                            }
                         }
-                        
+                        while (opcaoSubmenu!= 0);
 
 
 
@@ -100,7 +118,7 @@ namespace MyByteBank
             //Menu principal
             static void ShowMenu()
             {
-                Console.WriteLine("Digite a opção desejada: ");
+                Console.WriteLine("Escolha uma opção:");
                 Console.WriteLine("[1] - Inserir nova conta");
                 Console.WriteLine("[2] - Deletar uma conta");
                 Console.WriteLine("[3] - Listar todas as contas registradas");
@@ -116,7 +134,8 @@ namespace MyByteBank
             static void AdicionarConta(List<ContaCorrente> conta)
             {
 
-                Console.WriteLine($"Digite os dados da conta que deseja adicionar");
+                Console.WriteLine($"****Digite os dados da conta que deseja adicionar****");
+                Console.WriteLine();
                 Console.Write("Nome do titular da conta: ");
                 string titular = Console.ReadLine();
                 Console.Write("Digite o CPF do titular da conta: ");
@@ -126,6 +145,7 @@ namespace MyByteBank
                 Console.Write("Digite o saldo: ");
                 double saldo = double.Parse(Console.ReadLine());
                 conta.Add(new ContaCorrente(titular, cpf, senha, saldo));
+                Console.WriteLine();
                 Console.WriteLine($"Olá {titular}!! Seja bem-vindo ao ByteBank!");
             }
 
@@ -238,7 +258,7 @@ namespace MyByteBank
 
             Console.WriteLine($"Olá {contaLogada.Titular}, confira os dados da sua conta: ");
             Console.WriteLine(contaLogada);
-
+            Console.WriteLine();
             Console.Write("Digite o valor a ser depositado: ");
             double valor = double.Parse(Console.ReadLine());
             contaLogada.Deposito(valor);
